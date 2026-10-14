@@ -3,213 +3,117 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#080018">
-  <title>PlayfulRewards | Welcome</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome | PlayfulRewards</title>
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       min-height: 100vh;
+      min-height: 100dvh;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 22px;
+      padding: 24px;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      color: #fff;
+      color: #f5fff7;
       background:
-        radial-gradient(circle at 15% 10%, rgba(255,216,77,.18), transparent 28%),
-        radial-gradient(circle at 85% 15%, rgba(255,61,242,.2), transparent 30%),
-        radial-gradient(circle at 50% 45%, rgba(123,44,255,.35), transparent 55%),
-        linear-gradient(180deg, #080018, #120044 55%, #060012);
-    }
-
-    .container {
-      width: 100%;
-      max-width: 420px;
-      text-align: center;
-    }
-
-    .logo {
-      width: 76px;
-      height: 76px;
-      margin: 0 auto 20px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 24px;
-      font-size: 38px;
-      background: linear-gradient(135deg, #7b2cff, #4c19bb);
-      border: 1px solid rgba(255,255,255,.18);
-      box-shadow: 0 12px 35px rgba(91,34,255,.35);
-    }
-
-    .brand {
-      margin-bottom: 25px;
-      font-size: 23px;
-      font-weight: 900;
-      letter-spacing: -1px;
-    }
-
-    .brand span {
-      color: #ffd84d;
+        radial-gradient(circle at 50% 10%, rgba(57,255,136,.22), transparent 38%),
+        linear-gradient(180deg, #07150c, #030704 75%);
     }
 
     .card {
-      padding: 30px 22px;
-      border: 1px solid rgba(255,255,255,.14);
+      width: 100%;
+      max-width: 440px;
+      padding: 38px 24px;
+      text-align: center;
+      border: 1px solid rgba(57,255,136,.2);
       border-radius: 28px;
-      background: rgba(255,255,255,.075);
-      box-shadow: 0 24px 65px rgba(0,0,0,.32);
-      backdrop-filter: blur(14px);
+      background: rgba(11,23,16,.96);
+      box-shadow: 0 24px 70px rgba(0,0,0,.45);
     }
 
-    .badge {
-      display: inline-block;
-      margin-bottom: 19px;
-      padding: 8px 13px;
-      border-radius: 50px;
-      color: #ffe36d;
-      background: rgba(255,216,77,.1);
-      border: 1px solid rgba(255,216,77,.28);
-      font-size: 11px;
+    .icon {
+      width: 82px;
+      height: 82px;
+      display: grid;
+      place-items: center;
+      margin: 0 auto 24px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #67ffa3, #20d66b);
+      color: #031108;
+      font-size: 25px;
       font-weight: 900;
-      letter-spacing: .8px;
     }
 
     h1 {
       margin-bottom: 14px;
-      font-size: 34px;
-      line-height: 1.08;
+      font-size: clamp(28px, 7vw, 38px);
+      line-height: 1.1;
       letter-spacing: -1.5px;
     }
 
-    h1 span {
-      color: #ffd84d;
-    }
-
-    .description {
-      margin-bottom: 27px;
-      color: #c8c3ef;
-      font-size: 14px;
-      line-height: 1.65;
+    p {
+      margin-bottom: 28px;
+      color: #a7b8ab;
+      font-size: 15px;
+      line-height: 1.6;
     }
 
     .buttons {
-      display: flex;
-      flex-direction: column;
+      display: grid;
       gap: 12px;
     }
 
     .btn {
-      display: block;
-      width: 100%;
-      padding: 18px 15px;
-      border-radius: 17px;
+      display: flex;
+      min-height: 60px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 18px;
+      border: 0;
+      border-radius: 16px;
+      font-size: 15px;
+      font-weight: 800;
       text-decoration: none;
-      font-size: 16px;
-      font-weight: 900;
-      transition: transform .15s, filter .15s;
+      cursor: pointer;
+      transition: transform .15s ease, filter .15s ease;
     }
 
-    .btn:hover {
-      filter: brightness(1.08);
-      transform: translateY(-2px);
+    .btn:active { transform: scale(.98); }
+
+    .yes {
+      color: #031108;
+      background: linear-gradient(180deg, #67ffa3, #20d66b);
     }
 
-    .btn:active {
-      transform: scale(.98);
-    }
-
-    .btn-primary {
-      color: #1b0a00;
-      background: linear-gradient(180deg, #ffe36d, #ffb300);
-      box-shadow: 0 12px 28px rgba(255,179,0,.22);
-    }
-
-    .btn-secondary {
-      color: #fff;
+    .no {
+      color: #f5fff7;
       background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.17);
+      border: 1px solid rgba(255,255,255,.12);
     }
 
-    .notice {
-      margin-top: 23px;
-      color: #aaa3d0;
-      font-size: 11px;
-      line-height: 1.65;
-    }
-
-    footer {
-      margin-top: 23px;
-      color: #827aa9;
-      font-size: 11px;
-    }
-
-    @media (max-width: 360px) {
-      h1 {
-        font-size: 30px;
-      }
-
-      .card {
-        padding: 25px 17px;
-      }
+    .note {
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 12px;
     }
   </style>
 </head>
-
 <body>
-  <main class="container">
+  <main class="card">
+    <div class="icon">21+</div>
 
-    <div class="logo" aria-hidden="true">💸</div>
+    <h1>How old are you?</h1>
 
-    <div class="brand">
-      Playful<span>Rewards</span>
+    <p>Please confirm your age to continue to PlayfulRewards.</p>
+
+    <div class="buttons">
+      <a class="btn yes" href="/home/">I'm 21 or older</a>
+      <a class="btn no" href="/home/">I'm under 21</a>
     </div>
 
-    <section class="card">
-      <div class="badge">✨ WELCOME</div>
-
-      <h1>
-        How old <span>are you?</span>
-      </h1>
-
-      <p class="description">
-        Select your age group to continue to PlayfulRewards
-        and explore the available rewards.
-      </p>
-
-      <div class="buttons">
-        <a
-          class="btn btn-primary"
-          href="https://playful-9s6.pages.dev/">
-          I'm under 21
-        </a>
-
-        <a
-          class="btn btn-secondary"
-          href="https://playful-9s6.pages.dev/">
-          I'm 21 or older
-        </a>
-      </div>
-
-      <p class="notice">
-        Age selection does not verify your age.
-        The destination offer is intended for users aged 18+
-        who meet its eligibility requirements.
-        Rewards depend on available offers and completed tasks.
-      </p>
-    </section>
-
-    <footer>
-      © 2026 PlayfulRewards
-    </footer>
-
+    <p class="note">Select an option to continue.</p>
   </main>
 </body>
 </html>
